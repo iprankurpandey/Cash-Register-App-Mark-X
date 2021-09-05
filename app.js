@@ -1,40 +1,43 @@
-const billAmount = document.querySelector("#bill-amount");
-const cashGiven = document.querySelector("#cash-given");
-const checkButton = document.querySelector("#check-button");
-const message = document.querySelector("#error-message");
-const noOfNotes = document.querySelectorAll(".no-of-notes");
+const cashAmount = document.querySelector('#cashamount')
+const billAmount = document.querySelector('#billamount')
+const button = document.querySelector('#calculate')
+const noOfNotes = document.querySelectorAll('.noofnotes')
+const outputText = document.querySelector('#output-text')
+var notes = [2000, 500, 100, 20, 10, 5, 1]
 
-const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
+function checkValidAmount()
+{
 
-checkButton.addEventListener("click", function validateBillAndCashAmount() {
-  hideMessage();
-  if (billAmount.value > 0) {
-    if (cashGiven.value >= billAmount.value) {
-      const amountToBeReturned = cashGiven.value - billAmount.value;
-      calculateChange(amountToBeReturned);
-    } else {
-      showMessage("Do you wanna wash plates?");
-    }
-  } else {
-    showMessage("Invalid Bill Amount");
+ if (cashAmount.value > 0)
+ {
+   if(cashAmount.value > billAmount.value)
+   {
+    checkAmount()
+   }
+   else
+   {
+     displayMessage('please wash plates')
+   }
+ }
+}
+
+function checkAmount() {
+  const remainingAmount = Number(cashAmount.value) - Number(billAmount.value)
+  outputText.innerHTML = remainingAmount;
+  calculateNotes(remainingAmount) 
+  return remainingAmount;
+}
+
+function calculateNotes(remainingAmount) {
+  for (index = 0; index < notes.length; index++) {
+    console.log(notes[index])
+    const amountToBeReturned = Math.trunc(Number(remainingAmount) / Number(notes[index]))
+    console.log(amountToBeReturned)
+    remainingAmount = remainingAmount % notes[index]
+    noOfNotes[index].innerHTML = amountToBeReturned
   }
-});
-
-function calculateChange(amountToBeReturned) {
- 
-  for (let i = 0; i < availableNotes.length; i++) {
-    const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]); 
-    amountToBeReturned = amountToBeReturned % availableNotes[i];
-    noOfNotes[i].innerText = numberOfNotes;
-  }
 }
-
-function hideMessage() {
-  message.style.display = "none";
-}
-
-function showMessage(msg) {
-  message.style.display = "block";
-  message.innerText = msg;
-}
-  
+ function displayMessage(message){
+   outputText.innerHTML = message;
+ }
+button.addEventListener('click', checkValidAmount)
