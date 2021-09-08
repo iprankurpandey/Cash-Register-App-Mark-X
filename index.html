@@ -9,11 +9,17 @@
 </head>
 
 <body>
-<input type="text" id="cashamount"/> cash amount 
-<input type="text" id="billamount"/>bill amount
+	<main class="container">
+		<div>
+			<h1 class="heading">Cash Register Manager</h1>
+			<p class="description">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
+			<label for="cashamount">cash amount</label>
+<input type="text" id="cashamount"/> 
+<label for="billamount"> bill amount</label>
+<input type="text" id="billamount"/>
 <button id="calculate">calculate</button>
-<div id="output-text"></div>
-<table>
+<p><div id="output-text"></div></p>
+<table class="tabledata">
  
  <th>cash notes</th>
  <td>2000</td>
@@ -22,10 +28,11 @@
  <td>20</td>
  <td>10</td>
  <td>5</td>
-  <td>1</td>
+<td>1</td>
 
   <tr>
-   <th>no of notes</th>
+<caption>cash returned </caption>
+   <th>notes</th>
     <td class="noofnotes"></td>
     <td class="noofnotes"></td>
     <td class="noofnotes"></td>
@@ -34,7 +41,7 @@
     <td class="noofnotes"></td>
     <td class="noofnotes"></td>
  </tr>
-</table>
+
 <script src="app.js"></script>
-  </body>
+</body>
 </html>

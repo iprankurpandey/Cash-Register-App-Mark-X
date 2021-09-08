@@ -3,25 +3,24 @@ const billAmount = document.querySelector('#billamount')
 const button = document.querySelector('#calculate')
 const noOfNotes = document.querySelectorAll('.noofnotes')
 const outputText = document.querySelector('#output-text')
+const form = document.querySelector('#form')
 var notes = [2000, 500, 100, 20, 10, 5, 1]
 
 function checkValidAmount() 
 {
 	
-		const remainingAmount = Number(cashAmount.value) - Number(billAmount.value)
-		outputText.innerHTML = 'amount to be returned :' + remainingAmount;
-		calculateNotes(remainingAmount)
 	if ( billAmount.value > cashAmount.value)
 	{
-		
-		const remainingAmount = Number(cashAmount.value) - Number(billAmount.value)
+	const remainingAmount = Number(cashAmount.value) - Number(billAmount.value)
 		displayMessage('amount to be returned :' + remainingAmount)
 		calculateNotes(remainingAmount)
+		
 	}
 	else {
-		displayMessage('invalid')
-	}
 		
+		displayMessage('please wash 🍽️')
+			
+	}
 }
 
 function calculateNotes(remainingAmount) {

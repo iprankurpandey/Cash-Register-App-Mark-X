@@ -6,20 +6,17 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
 
 :root {
   --primary-color: #065F46;
+   font-family: 'Recursive', sans-serif;
+background-color: tomato;
 }
 
-body {
-  font-family: 'Recursive', sans-serif;
-}
+
 
 .container {
-  margin: 4rem auto 7rem;
+  margin: 4rem 0rem 4rem 0rem;
   text-align: center;
   background-color: white;
   padding: 2rem 2rem;
@@ -34,13 +31,13 @@ body {
   margin: 1rem;
 }
 
-.input-label {
+input .label {
   display: block;
   font-size: large;
   font-weight: 600;
 }
 
-.input {
+input {
   font-size: 14px;
   outline: #fff;
   padding: 0.6rem 1rem;
@@ -64,20 +61,21 @@ body {
   display: block;
 }
 
-#error-message {
+#output-text {
   display: block;
   font-size: larger;
   margin: 1rem 0 0;
+  text-align: center
 }
 
-.change-table {
+.tabledata {
   width: 50%;
   text-align: justify;
   border-collapse: collapse;
   margin: auto;
 }
 
-.change-table caption {
+.tabledata caption {
   margin: 1rem auto;
   font-size: x-large;
   font-weight: 500;
@@ -91,20 +89,3 @@ td {
   padding: 0.4rem;
 }
 
-footer {
-  text-align: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.footer-h {
-  font-size: large;
-  text-align: center;
-  padding: 1rem;
-  
-}
-
-.footer-list {
-  margin: 1rem;
-}
