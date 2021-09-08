@@ -6,21 +6,25 @@ const outputText = document.querySelector('#output-text')
 const form = document.querySelector('#form')
 var notes = [2000, 500, 100, 20, 10, 5, 1]
 
-function checkValidAmount() 
-{
-	
-	if ( billAmount.value > cashAmount.value)
-	{
+function checkValidAmount() {
+
+
+
 	const remainingAmount = Number(cashAmount.value) - Number(billAmount.value)
-		displayMessage('amount to be returned :' + remainingAmount)
-		calculateNotes(remainingAmount)
-		
+	displayMessage('amount to be returned :' + remainingAmount)
+	calculateNotes(remainingAmount)
+	if (remainingAmount < 0) {
+		displayMessage('wash plates')
 	}
 	else {
-		
-		displayMessage('please wash 🍽️')
-			
+
+		displayMessage('amount to be returned :' + remainingAmount)
+
 	}
+}
+
+function displayClear() {
+	form.reset()
 }
 
 function calculateNotes(remainingAmount) {
