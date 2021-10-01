@@ -4,6 +4,8 @@ const button = document.querySelector('#calculate')
 const noOfNotes = document.querySelectorAll('.noofnotes')
 const outputText = document.querySelector('#output-text')
 const form = document.querySelector('#form')
+const body = document.querySelector('.container')
+const image = 'https://media.giphy.com/media/d2YMJ481F8qqs/giphy.gif'
 var notes = [2000, 500, 100, 20, 10, 5, 1]
 
 function checkValidAmount() {
@@ -14,7 +16,10 @@ function checkValidAmount() {
 	displayMessage('amount to be returned :' + remainingAmount)
 	calculateNotes(remainingAmount)
 	if (remainingAmount < 0) {
-		displayMessage('wash plates')
+		displayMessage('wash plates' )
+		document.body.style.backgroundImage = "url('https://media.giphy.com/media/d2YMJ481F8qqs/giphy.gif')"
+		document.body.style.backgroundRepeat = "no-repeat";
+		document.body.style.backgroundPosition = 'inline'
 	}
 	else {
 
